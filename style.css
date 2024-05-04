@@ -1,0 +1,82 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+  }
+  
+  h1 {
+    margin: 0px;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    font-weight: 400;
+    width: 100%;
+    background-color: grey;
+    color: #F7F7F7;
+  }
+  
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    height: 600px;
+    background-color: #E3E4DE;
+    padding: 8px;
+  }
+  
+  div {
+    border-bottom: 1px solid black;
+  }
+  
+  table {
+    border-collapse: collapse;
+    border: 1px solid black;
+    width: 100%;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+    border: 1px solid black;
+    width: fit-content;
+  }
+  
+  tr:nth-child(even){
+    background-color: #f2f2f2;
+  }
+  
+  th {
+    background-color: lightgrey;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  tfoot td {
+    background-color: lightgrey;
+    border: none;
+  }
+  
+  input {
+    padding: 4px;
+    margin-right: 8px;
+    font-size: 16px;
+    width: 120px;
+    border: 1px solid black;
+  }
+  
+  button {
+    align-self: right;
+    margin: 20px;
+    padding: 2px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    border: 1px black solid;
+  }
+  
+  button:hover {
+    background-color: grey;
+  }
+  

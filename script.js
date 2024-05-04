@@ -1,1 +1,3 @@
-console.log('Hello!');
+function submitForm(event) {
+  event.preventDefault();
+}
