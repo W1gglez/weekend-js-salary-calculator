@@ -17,11 +17,11 @@
             <section id="add-employee">
                 <p>Add Employee</p>
                 <form onsubmit="submitForm(event)">
-                <input type="text" placeholder="First Name" id="first-name">
-                <input type="text" placeholder="Last Name" id="last-name">
-                <input type="text" placeholder="ID" id="id">
-                <input type="text" placeholder="Title" id="title">
-                <input type="text" placeholder="Annual Salary" id="annual-salary">
+                <input type="text" placeholder="First Name" id="first-name" required>
+                <input type="text" placeholder="Last Name" id="last-name" required>
+                <input type="text" placeholder="ID" id="id" required>
+                <input type="text" placeholder="Title" id="title" required>
+                <input type="number" placeholder="Annual Salary" id="annual-salary" required>
                 <button>Submit</button>
                 </form>
             </section>
@@ -56,6 +56,5 @@
         </div>
     
     </main>
-    <footer></footer>
 </body>
 </html>
