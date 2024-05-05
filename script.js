@@ -22,13 +22,16 @@ const employees = [
   },
 ];
 
+onReady();
+
 function onReady() {
   console.log('DOM Ready');
-  render();
+  render(employees);
 }
 
 function submitForm(event) {
   event.preventDefault();
+
   //Create new employee from user input
   const employee = {
     firstName: document.getElementById('first-name').value,
@@ -37,26 +40,45 @@ function submitForm(event) {
     title: document.getElementById('title').value,
     annualSalary: Number(document.getElementById('annual-salary').value),
   };
-  console.log(employee);
+  //Push new object to array
+  employees.push(employee);
 
   //Render array
-  render();
+  render(employees);
 }
 
 function render(array) {
-  const table = document.getElementById('employees-table');
-  for (const item of array) {
+  const table = document.getElementById('table-body');
+  //Clear table
+  table.innerHTML = '';
+  //Loop through array creating new row with
+  for (let i = 0; i < array.length; i++) {
     const row = document.createElement('tr');
+    row.id = i;
     row.innerHTML = `
-    <td>${item.firstName.value}</td>
-    <td>${item.firstName.value}</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>${array[i].firstName}</td>
+    <td>${array[i].lastName}</td>
+    <td>${array[i].id}</td>
+    <td>${array[i].title}</td>
+    <td>${array[i].annualSalary}</td>
+    <td><button onclick=deleteEntry(event) >Delete</button></td>
 `;
+    //Add row to table
     table.appendChild(row);
   }
+
+  const monthlyTotal = document.getElementById('total');
+  total.innerText = `Total Monthly: ${calcTotal(employees)}`;
 }
 
-function deleteEntry(event) {}
+function calcTotal(array) {
+  return array
+    .map((element) => element.annualSalary)
+    .reduce((count, sum) => (sum += count), 0);
+}
+
+function deleteEntry(event) {
+  employees.splice(event.target.parentElement.parentElement.id, 1);
+
+  render(employees);
+}

@@ -15,17 +15,12 @@ body, html {
     color: #F7F7F7;
   }
   
-  .container {
+  #container {
     max-width: 900px;
     margin: 0 auto;
-    height: 600px;
-    background-color: #E3E4DE;
     padding: 8px;
   }
   
-  div {
-    border-bottom: 1px solid black;
-  }
   
   table {
     border-collapse: collapse;
@@ -50,9 +45,10 @@ body, html {
     font-weight: 500;
   }
 
-  tfoot td {
-    background-color: lightgrey;
+  tfoot td{
+    background-color: #f2f2f2;
     border: none;
+    height: 24px;
   }
   
   input {
@@ -78,5 +74,9 @@ body, html {
   
   button:hover {
     background-color: grey;
+  }
+
+  #total {
+    text-align: right;
   }
   
