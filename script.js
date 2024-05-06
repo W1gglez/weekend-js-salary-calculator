@@ -92,6 +92,9 @@ function calcTotal(array) {
   if (total >= 20000) {
     document.getElementById('total').style.backgroundColor = 'red';
     document.getElementById('total').style.color = 'white';
+  } else {
+    document.getElementById('total').style.backgroundColor = 'white';
+    document.getElementById('total').style.color = 'black';
   }
 
   return total;
