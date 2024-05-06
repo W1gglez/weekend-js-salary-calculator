@@ -78,17 +78,23 @@ function render(array) {
   }
 
   const monthlyTotal = document.getElementById('total');
-  total.innerText = `Total Monthly: ${dollarFormat.format(
+  monthlyTotal.innerText = `Total Monthly: ${dollarFormat.format(
     calcTotal(employees)
   )}`;
 }
 
 function calcTotal(array) {
-  return (
+  const total =
     array
       .map((element) => element.annualSalary)
-      .reduce((count, sum) => (sum += count), 0) / 12
-  );
+      .reduce((count, sum) => (sum += count), 0) / 12;
+
+  if (total >= 20000) {
+    document.getElementById('total').style.backgroundColor = 'red';
+    document.getElementById('total').style.color = 'white';
+  }
+
+  return total;
 }
 
 function deleteEntry(event) {
