@@ -22,6 +22,12 @@ const employees = [
   },
 ];
 
+//Create currency format
+let dollarFormat = Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+});
+
 onReady();
 
 function onReady() {
@@ -45,6 +51,10 @@ function submitForm(event) {
 
   //Render array
   render(employees);
+
+  //Clear input fields
+  const form = document.getElementById('add-employee');
+  form.reset();
 }
 
 function render(array) {
@@ -60,21 +70,25 @@ function render(array) {
     <td>${array[i].lastName}</td>
     <td>${array[i].id}</td>
     <td>${array[i].title}</td>
-    <td>${array[i].annualSalary}</td>
-    <td><button onclick=deleteEntry(event) >Delete</button></td>
+    <td class='salary'>${dollarFormat.format(array[i].annualSalary)}</td>
+    <td class='delete' ><button onclick=deleteEntry(event) >Delete</button></td>
 `;
     //Add row to table
     table.appendChild(row);
   }
 
   const monthlyTotal = document.getElementById('total');
-  total.innerText = `Total Monthly: ${calcTotal(employees)}`;
+  total.innerText = `Total Monthly: ${dollarFormat.format(
+    calcTotal(employees)
+  )}`;
 }
 
 function calcTotal(array) {
-  return array
-    .map((element) => element.annualSalary)
-    .reduce((count, sum) => (sum += count), 0);
+  return (
+    array
+      .map((element) => element.annualSalary)
+      .reduce((count, sum) => (sum += count), 0) / 12
+  );
 }
 
 function deleteEntry(event) {

@@ -16,7 +16,6 @@ body, html {
   }
   
   #container {
-    max-width: 900px;
     margin: 0 auto;
     padding: 8px;
   }
@@ -30,7 +29,7 @@ body, html {
   
   th, td {
     text-align: left;
-    padding: 8px;
+    padding:  8px 4px;
     border: 1px solid black;
     width: fit-content;
   }
@@ -52,17 +51,16 @@ body, html {
   }
   
   input {
+    flex: 1;
+    width: fit-content;
     padding: 4px;
-    margin-right: 8px;
-    font-size: 16px;
-    width: 120px;
+    font-size: 18px;
     border: 1px solid black;
   }
   
   button {
-    align-self: right;
-    margin: 20px;
-    padding: 2px 20px;
+    margin: 0px;
+    padding: 2px 24px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -79,4 +77,39 @@ body, html {
   #total {
     text-align: right;
   }
+
+  p {
+    font-size: 20px;
+  }
+
+  .salary {
+    text-align: right;
+  }
+
+  .delete {
+    text-align: center;
+  }
+
+  form  {
+    display: flex;
+    flex-direction: column;
+     
+
+  }
+
+form div{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin:  8px 0px;
+}
+
+  
+.submit {
+    width: fit-content;
+    align-self: flex-end;
+    font-size: 18px;
+}
+
+
   

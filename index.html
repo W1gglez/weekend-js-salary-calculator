@@ -14,15 +14,17 @@
     <main>
         <div id="container">
 
-            <section id="add-employee">
+            <section >
                 <p>Add Employee</p>
-                <form onsubmit="submitForm(event)">
-                <input type="text" placeholder="First Name" id="first-name" required>
-                <input type="text" placeholder="Last Name" id="last-name" required>
-                <input type="text" placeholder="ID" id="id" required>
-                <input type="text" placeholder="Title" id="title" required>
-                <input type="number" placeholder="Annual Salary" id="annual-salary" required>
-                <button>Submit</button>
+                <form onsubmit="submitForm(event)" id="add-employee">
+                    <div>
+                        <input type="text" placeholder="First Name"  id="first-name" required>
+                        <input type="text" placeholder="Last Name" id="last-name" required>
+                        <input type="text" placeholder="ID" id="id" required>
+                        <input type="text" placeholder="Title" id="title" required>
+                        <input type="number" placeholder="Annual Salary"id="annual-salary" required>
+                    </div>
+                <button class="submit">Submit</button>
                 </form>
             </section>
             <section id="employees-table">
